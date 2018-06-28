@@ -3,13 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <title>Message Form</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
 </head>
 <body>
 <form th:action="@{/savemessage}" th:object="${aMessage}" method="post">
     <div class="container">
         <h1>CHATTING BOX</h1><br/>
         <input type="hidden" th:field="*{id}">
-        <input type="text" th:field="*{messageContainer}"><br/><br/>
+        <textarea class="form-control" rows="5"  type="text" th:field="*{messageContainer}"></textarea>
+        <!--<input type="text" th:field="*{messageContainer}"><br/><br/>-->
         <select th:field="*{recipie}" multiple>
             <option th:each ="eachRecipi:${messageRecip}" th:value="${eachRecipi.id}" th:text="${eachRecipi.recipName}"></option>
         </select>
@@ -19,5 +22,7 @@
 
     <button type="submit">Save Message</button>
 </form>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </body>
 </html>
