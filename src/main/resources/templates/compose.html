@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Message Form</title>
+</head>
+<body>
+<form th:action="@{/savemessage}" th:object="${aMessage}" method="post">
+    <div class="container">
+        <h1>CHATTING BOX</h1><br/>
+        <input type="hidden" th:field="*{id}">
+        <input type="text" th:field="*{messageContainer}"><br/><br/>
+        <select th:field="*{recipie}" multiple>
+            <option th:each ="eachRecipi:${messageRecip}" th:value="${eachRecipi.id}" th:text="${eachRecipi.recipName}"></option>
+        </select>
+
+
+    </div>
+
+    <button type="submit">Save Message</button>
+</form>
+</body>
+</html>
