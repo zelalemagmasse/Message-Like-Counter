@@ -24,7 +24,7 @@
         <tr class="info" th:each="eachRecipi:${messagelist}">
 
             <td  th:text="${eachRecipi.messageContainer}"></td>
-            <td> <a th:href="@{/redirect/{id}(id=${eachRecipi.id})}">LIKE</a> </td>
+            <td> <a th:href="@{/redirect/{id}(id=${eachRecipi.id})}"><button class="btn btn-warning">LIKE</button></a> </td>
             <td th:text="${eachRecipi.getLikeCount()}"> </td>
 
         </tr>
@@ -32,7 +32,7 @@
 
         </tbody>
     </table>
-    <a th:href="@{/addmessage}">ADD MESSAGE</a>
+    <a th:href="@{/addmessage}"><button class="btn btn-primary">ADD MESSAGE</button></a>
 
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
